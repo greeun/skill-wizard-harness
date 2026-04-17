@@ -1,4 +1,4 @@
-# Skill Wizard Harness (v2) — v1.0.0
+# Skill Wizard Harness — v2.0.0
 
 A meta-skill for creating Claude Code skills that use the **Planner → Generator → Evaluator** harness pattern from Anthropic's [Harness Design for Long-Running Application Development](https://www.anthropic.com/engineering/harness-design-long-running-apps) (Prithvi Rajasekaran, 2026).
 

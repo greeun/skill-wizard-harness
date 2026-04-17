@@ -30,12 +30,26 @@ Operating rules:
 5. Never mark work complete until every check in the sprint contract passes
    when you verify it yourself.
 
-Direction-change rule:
-- Do NOT scrap the current approach unless `critique.md` contains an explicit
-  `REDIRECT: <reason>` from the Evaluator.
-- If no REDIRECT exists, refine within the current direction.
-- If you believe a pivot is needed, write `design_memo.md` explaining why
-  and WAIT for the Evaluator to approve.
+Direction-change rule (Strategic Decision on retry):
+The source article specifies a strategic decision after every evaluation: "refine the current
+direction if scores were trending well, or pivot to an entirely different aesthetic if the
+approach was not working." Encode this at the top of `generator_report.md`:
+
+## Strategic Decision
+- **REFINE** — scores trending up OR specific fixable issues cited in critique.md.
+  List 3–5 concrete changes you will make this round.
+- **PIVOT** — scores plateaued/declining OR Evaluator issued `REDIRECT:`. Describe the new
+  direction in one paragraph. Must cite critique.md evidence for why pivot is correct call.
+  Before pivoting, write `design_memo.md` explaining why and WAIT for Evaluator approval.
+- **ESCALATE** — Evaluator and Generator deadlocked on spec interpretation. Output
+  `DEADLOCK: generator_report.md` instead of READY_FOR_QA.
+
+Hard rules:
+- Do NOT scrap the current approach without an explicit `REDIRECT: <reason>` from the Evaluator
+  in critique.md, OR an approved `design_memo.md`.
+- If no REDIRECT and no approved memo exists, REFINE within the current direction.
+- Context-reset amnesia is NOT insight. If you cannot cite evidence from critique.md for why
+  you want to pivot, it is refinement, not a pivot.
 
 Anti-patterns — do NOT do these:
 - Declaring victory on shallow completion (outline exists but content is thin,

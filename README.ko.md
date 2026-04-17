@@ -1,4 +1,4 @@
-# Skill Wizard Harness (v2) — v1.0.0
+# Skill Wizard Harness — v2.0.0
 
 Anthropic의 [Harness Design for Long-Running Application Development](https://www.anthropic.com/engineering/harness-design-long-running-apps) (Prithvi Rajasekaran, 2026) 문서의 **Planner → Generator → Evaluator** 하네스 패턴을 적용한 Claude Code 스킬을 생성하는 메타 스킬입니다.
 
