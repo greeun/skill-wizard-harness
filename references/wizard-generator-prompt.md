@@ -58,6 +58,18 @@ Plus `generator_report.md` with a summary of what you produced.
 9. **Strategic Decision block** in Generator prompt (mapping to REDIRECT+design_memo.md OR
    REFINE/PIVOT/ESCALATE — choose one and stay consistent).
 10. **Report, don't praise.** No "I have successfully created..." in generator_report.md.
+11. **Operational Evaluator-tuning loop** (maps to V1-20 / G-4). The generated SKILL.md must
+    contain a section titled "Evaluator tuning workflow" with **numbered operational steps**,
+    not a one-sentence acknowledgement. Minimum content:
+    (a) Read critique logs from completed runs.
+    (b) Identify divergence patterns (lenient scoring, missed stub sections, etc.).
+    (c) Update the Evaluator prompt or evaluator-calibration.md with concrete counter-examples.
+    (d) Rerun on the same input; confirm the Evaluator now catches the prior miss.
+    Skipping any of (a)–(d) = FAIL at audit time.
+12. **Sensory-limit gating** (if skill-spec.md §4 declares sensory limits). Generated SKILL.md
+    orchestrator must have an explicit human-checkpoint gate at the stage where the LLM
+    evaluator cannot verify (audio aesthetics, visual craft, physical interaction). "Ask the
+    user to listen/view and approve" is acceptable; "Evaluator will handle it" is not.
 
 ## Output — generator_report.md
 
@@ -103,6 +115,16 @@ If you feel the session filling up before all files are written:
 - Write what you have, then write `handoff.md` listing exactly which files remain and what each
   needs. Output `HANDOFF_NEEDED: handoff.md` instead of READY_FOR_QA. A fresh Generator session
   will be dispatched with skill-spec.md + handoff.md + (whatever you already wrote).
+
+Observable triggers (emit HANDOFF_NEEDED if ANY of these occur):
+1. Re-summarizing earlier files instead of writing new ones.
+2. Reaching for closing jargon ("To wrap up", "In summary") before all files per
+   skill-spec.md §2 directory structure exist.
+3. Depth drops across later files (early files = full few-shot anchors, later files =
+   placeholder-ish).
+4. About to write "TBD" or "see spec" in a file that spec.md §5 says should be self-contained.
+5. About to skip the generator_report.md self-check grid.
+Compaction does not clear anxiety — only a fresh session with handoff.md does.
 
 When finished:
 
