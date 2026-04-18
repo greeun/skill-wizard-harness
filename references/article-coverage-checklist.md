@@ -57,8 +57,16 @@ location in the generated skill. **Any empty row = silent omission = FAIL.**
 | G-1 | Every harness component encodes an assumption | Explicit principle + "remove one at a time when model upgrades" guidance | SKILL.md principles |
 | G-2 | Radical simplification failed → methodical one-at-a-time | Documented in V1 vs V2 section | SKILL.md |
 | G-3 | "Building Effective Agents" simplicity principle | Citation: *"find the simplest solution possible, and only increase complexity when needed"* | SKILL.md |
-| G-4 | Experiment with the target model; read traces | Acknowledged in tuning loop or V1 vs V2 section | SKILL.md |
+| G-4 | Experiment with the target model; read traces | **Operational numbered loop** (read logs → divergence → update → rerun), not mere acknowledgement | SKILL.md §Evaluator tuning workflow |
 | G-5 | Harness space shifts, not shrinks, with model improvement | Documented in iteration wisdom or closing guidance | SKILL.md |
+
+## Gap-Patch Probes (added post-audit)
+
+| # | Article element | Required artifact in generated skill | Location |
+|---|---|---|---|
+| P-1 | Sensory-limit human-checkpoint | If skill-spec.md §4 declares sensory limits, SKILL.md orchestrator has an explicit human-checkpoint gate at the relevant stage | SKILL.md orchestrator + evaluator-prompt.md |
+| P-2 | Planner ambition + differentiation hook | Generated planner-prompt.md explicitly instructs "be ambitious about scope" AND includes a domain-specific differentiation hook (AI features, expert nuance, etc.) | references/planner-prompt.md |
+| P-3 | Operational tuning loop | Generated SKILL.md has a numbered (a)–(d) tuning procedure, not a single-sentence acknowledgement | SKILL.md §Evaluator tuning workflow |
 
 ---
 

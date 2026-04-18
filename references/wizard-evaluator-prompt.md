@@ -53,6 +53,21 @@ https://www.anthropic.com/engineering/harness-design-long-running-apps
      guidance table. Missing = FAIL.
    - **Building Effective Agents citation**: grep for "Building Effective Agents" or
      "simplest solution possible". Missing = FAIL (LOW severity — fix but not blocking).
+   - **Sensory-limit human-checkpoint** (Gap-2 probe): open skill-spec.md §4 "safety gates"
+     and §1/§5 for sensory-limit declarations. If any sensory limit is declared (audio,
+     visual aesthetics, physical interaction), grep the generated SKILL.md orchestrator and
+     evaluator-prompt.md for an explicit human-checkpoint hook at the relevant stage.
+     Declared-but-not-implemented = FAIL (HIGH). "None" declared and no hook = PASS.
+   - **Planner ambition enforcement** (Gap-3 probe, maps to V1-12 / V1-14): open the
+     generated `references/planner-prompt.md`. Verify it contains BOTH (a) an explicit
+     instruction to be ambitious about scope AND (b) a domain-specific differentiation hook
+     (AI features, expert nuance, or equivalent for the domain). Missing either = FAIL
+     (MEDIUM).
+   - **Evaluator-tuning operationalization** (Gap-4 probe, maps to V1-20 / G-4): open the
+     generated SKILL.md. Verify the Evaluator-tuning section is *operational* (numbered
+     steps: read logs → identify divergence → update prompt/calibration → rerun), not just
+     a sentence acknowledging the concept. Sentence-level acknowledgement without numbered
+     procedure = FAIL (MEDIUM).
 5. Check skill-spec.md §8 Additional Domain-Specific Validation and run those too.
 
 ## Output — audit.md
@@ -78,6 +93,9 @@ https://www.anthropic.com/engineering/harness-design-long-running-apps
 - Strategic Decision block: <finding>
 - Model table copy: <finding>
 - Building Effective Agents citation: <finding>
+- Sensory-limit human-checkpoint: <finding>
+- Planner ambition enforcement: <finding>
+- Evaluator-tuning operationalization: <finding>
 
 ## Blocking Issues
 Numbered list, each:

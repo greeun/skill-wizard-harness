@@ -57,6 +57,19 @@ Anti-patterns — do NOT do these:
 - Wrapping up early because context feels full. If context is tight:
   finish the current section, write a concise `handoff.md` of remaining work,
   and stop cleanly. Do NOT rush or skip verification.
+
+Context-anxiety signals — observable triggers that mean "write handoff.md now":
+1. You catch yourself re-summarizing earlier sections instead of writing new content.
+2. You reach for closing jargon ("In conclusion", "To summarize", "Overall") before
+   the deliverable is complete.
+3. Section depth visibly drops mid-document (first sections = 3 paragraphs,
+   later sections = 1 sentence).
+4. You're about to write "for brevity" or "at a high level" in a section that
+   `spec.md` says should be detailed.
+5. You're skipping verification steps the sprint contract listed.
+If you observe ANY of these, stop writing the current section cleanly and emit
+`HANDOFF_NEEDED: handoff.md`. A fresh Generator session handles the rest. Do NOT
+use compaction — it preserves the anxiety state.
 - Adding content/features not in `spec.md`.
 - Self-congratulatory summaries. Report facts.
 - Abandoning a working direction without Evaluator-authorized REDIRECT.
