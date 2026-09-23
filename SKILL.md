@@ -1,7 +1,8 @@
 ---
 name: skill-wizard-harness
 version: 2.0.0
-description: Create Claude Code skills that use the Planner-Generator-Evaluator harness pattern from Anthropic's "Harness Design for Long-Running Application Development." The wizard itself operates as a meta-harness — the main session does intake only, then dispatches Planner/Generator/Evaluator subagents to design, write, and audit the new skill against the source article. Use when creating skills that need multi-agent loops, quality assurance cycles, iterative refinement, autonomous long-running workflows, or when the user wants a skill that runs a planner/generator/evaluator pipeline. Trigger phrases — EN: "create harness skill", "skill with harness", "harness-based skill", "skill wizard v2", "skill-wizard-harness", "create skill with planner evaluator", "multi-agent skill", "autonomous skill". KO: "하네스 스킬 생성", "하네스 스킬", "스킬 위자드 v2", "플래너 제너레이터 스킬", "자율 스킬 생성", "멀티에이전트 스킬".
+description: >-
+  Create Claude Code skills that use the Planner-Generator-Evaluator harness pattern from Anthropic's "Harness Design for Long-Running Application Development." The wizard itself operates as a meta-harness — the main session does intake only, then dispatches Planner/Generator/Evaluator subagents to design, write, and audit the new skill against the source article. Use when creating skills that need multi-agent loops, quality assurance cycles, iterative refinement, autonomous long-running workflows, or when the user wants a skill that runs a planner/generator/evaluator pipeline. Trigger phrases — EN: "create harness skill", "skill with harness", "harness-based skill", "skill wizard v2", "skill-wizard-harness", "create skill with planner evaluator", "multi-agent skill", "autonomous skill". KO: "하네스 스킬 생성", "하네스 스킬", "스킬 위자드 v2", "플래너 제너레이터 스킬", "자율 스킬 생성", "멀티에이전트 스킬".
 ---
 
 # Skill Wizard v2 — Harness-Powered (and Harness-Built)
@@ -25,7 +26,7 @@ The first pilot was methodologically flawed — giving both generators `article-
 as input tested "copy from a list" rather than "remember the article." The follow-up removed
 the checklist from generator input; only the ground-truth auditor used it for scoring.
 
-**What the follow-up shows** (artifacts at `experiments/pilot-followup-2026-04-18/`):
+**What the follow-up shows** (the pilot artifacts are not bundled in this repository):
 
 - Both v1 and v2 equivalently forget article **anecdotes** (Dutch Art Museum iteration-10
   leap, ~4h wall-clock tolerance, iteration range 5–15, "Building Effective Agents" quote,
